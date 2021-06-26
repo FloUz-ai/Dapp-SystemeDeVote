@@ -53,7 +53,7 @@ const App = () => {
         // Récupérer la liste des comptes autorisés
       }catch (error){
           console.log(error);
-          alert('Error: Check the address, the current state... transaction declined');
+          alert('Error transaction');
           }
     }
 
@@ -133,7 +133,7 @@ const App = () => {
           setAccounts(accounts);
           await contract.methods.vote(vote).send({from: accounts[0]});
       }catch(error){
-        alert('Error: Check the status, the Id... transaction declined');
+        alert('Error transaction');
       }
     }
 
@@ -160,7 +160,7 @@ const App = () => {
         setVoteVoter(await contract.methods.getVote(add).call());
         console.log(proposalTab);
       }catch(error){
-        alert ('Error: Check the status, the address... transaction declined');
+        alert ('Error transaction');
       }
     }
 
@@ -170,7 +170,7 @@ const App = () => {
         console.log(winner);
     }catch (error){
 
-        alert('Not yet decided');
+        alert('Error transaction');
       }
     }
 
